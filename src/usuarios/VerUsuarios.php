@@ -7,7 +7,7 @@
     <h2>Clientes</h2>
 
     <?php
-    include("../../conexion.php");
+    include("../conexion.php");
     $usuario = "SELECT * FROM Usuarios";
     $resultado = mysqli_query($enlace, $usuario);
 

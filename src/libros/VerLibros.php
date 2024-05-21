@@ -7,7 +7,7 @@
     <h2>Libros</h2>
 
     <?php
-    include("../../conexion.php");
+    include("../conexion.php");
     $libro = "SELECT * FROM Libros";
     $resultado = mysqli_query($enlace, $libro);
 
@@ -24,7 +24,6 @@
                 <th>Editorial</th>                
                 <th>Autor</th>                             
                 <th>Genero</th > 
-                <th>Domicilio</th > 
                 <th>Pais Autor</th > 
                 <th>No. Paginas</th > 
                 <th>Año Edicion</th > 
@@ -35,7 +34,7 @@
             <?php
             while ($renglon = $resultado->fetch_array(MYSQLI_ASSOC)) {
                 $id = $renglon['id_libro'];
-                $nombre = $renglon['nombre'];
+                $nombre = $renglon['nombre_libro'];
                 $editorial = $renglon['editorial'];
                 $autor = $renglon['autor'];
                 $genero = $renglon['genero'];
@@ -51,6 +50,7 @@
                     <td><?php echo $autor; ?></td>
                     <td><?php echo $genero; ?></td>
                     <td><?php echo $paisAutor; ?></td>
+                    <td><?php echo $numeroPaginas; ?></td>
                     <td><?php echo $anioEdicion; ?></td>
                     <td><?php echo $precio; ?></td>
                 </tr>

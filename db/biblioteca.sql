@@ -29,9 +29,9 @@ fecha_nacimiento date not null
 
 Create table Prestamos(
 id_prestamo int(6) auto_increment not null primary key,
-fk_id_libro int not null,
+fk_id_libro int,
 foreign key ( fk_id_libro) references Libros(id_libro),
-fk_id_usuario int not null,
+fk_id_usuario int,
 foreign key (fk_id_usuario) references Usuarios(id_usuario),
 fecha_salida date not null,
 fecha_max_devolucion date not null,
@@ -67,7 +67,6 @@ VALUES
 -- Generar 25 préstamos aleatorios con fechas de devolución específicas
 INSERT INTO Prestamos (fk_id_libro, fk_id_usuario, fecha_salida, fecha_max_devolucion, fecha_devolucion)
 VALUES 
-    (1, 1, '2019-03-15', '2019-03-29', '2019-04-10'),
     (2, 2, '2020-07-20', '2020-08-03', '2020-08-15'),
     (3, 3, '2021-09-05', '2021-09-19', '2021-10-01'),
     (4, 4, '2020-02-10', '2020-02-24', '2020-03-07'),
